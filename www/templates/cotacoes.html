@@ -1,0 +1,11 @@
+<ion-view view-title="Cotacoes">
+  <ion-content>
+  	<button class="button button-icon button-clear ion-plus" ng-click="newCotacao()">
+    </button>
+    <ion-list>
+      <ion-item ng-repeat="cotacao in cotacoes" href="#/app/cotacoes/{{cotacao.id}}">
+        {{cotacao.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
