@@ -89,20 +89,6 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'teste', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-})
-
 .controller('CotacoesCtrl', function($scope, $http) {
   var req = {
       method: 'GET',
@@ -111,7 +97,7 @@ angular.module('starter.controllers', [])
       //data: { test: 'test' }
   }
   $http(req)
-       .then(
+       .then( 
           function(resp) {
             $scope.cotacoes = [
               { title: 'Renan da Zueira', id: 1 },

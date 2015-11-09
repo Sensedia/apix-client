@@ -49,31 +49,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
     .state('app.cotacoes', {
       url: '/cotacoes',
       views: {
         'menuContent': {
           templateUrl: 'templates/cotacoes.html',
           controller: 'CotacoesCtrl'
-        }
-      }
-    })
-
-    .state('app.sinistros', {
-      url: '/sinistros',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/sinistros.html',
-          controller: 'SinitrosCtrl'
         }
       }
     })
@@ -86,27 +67,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
           controller: 'CotacaoCtrl'
         }
       }
-    })
+    });
 
-    .state('app.sinistro', {
-      url: '/sinistros/:sinistroId',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/sinistro.html',
-          controller: 'SinitrosCtrl'
-        }
-      }
-    })
-
-  .state('app.playlist', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/cotacoes');
 });
