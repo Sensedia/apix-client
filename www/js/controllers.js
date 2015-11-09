@@ -103,29 +103,57 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('CotacoesCtrl', function($scope) {
-  $scope.cotacoes = [
-    { title: 'iuoi', id: 1 },
-    { title: 'Chuoiuoiill', id: 2 },
-    { title: 'uiuoio', id: 3 },
-    { title: 'Inuiouiudie', id: 4 },
-    { title: 'Ruiouoiap', id: 5 },
-    { title: 'Couoiuiowbell', id: 6 }
-  ];
+.controller('CotacoesCtrl', function($scope, $http) {
+  var req = {
+      method: 'GET',
+      url: 'https://cors-test.appspot.com/test'
+      //headers: { 'Content-Type': ""},
+      //data: { test: 'test' }
+  }
+  $http(req)
+       .then(
+          function(resp) {
+            $scope.cotacoes = [
+              { title: 'Renan da Zueira', id: 1 },
+              { title: 'Chuoiuoiill', id: 2 },
+              { title: 'uiuoio', id: 3 },
+              { title: 'Inuiouiudie', id: 4 },
+              { title: 'Ruiouoiap', id: 5 },
+              { title: 'Couoiuiowbell', id: 6 }
+            ];
+          }, 
+          function(err) {
+            $scope.cotacoes = [
+              { title: 'Errou', id: 1 },
+              { title: 'teste', id: 2 }
+            ];
+          }
+        )  
 })
 
 .controller('CotacaoCtrl', function($scope, $stateParams) {
 })
 
-.controller('SinitrosCtrl', function($scope) {
-  $scope.sinistros = [
-    { title: '9u9u9u', id: 1 },
-    { title: 'Chiu0u09ull', id: 2 },
-    { title: 'u09u09', id: 3 },
-    { title: '90u90', id: 4 },
-    { title: '0000000000', id: 5 },
-    { title: 'Coi09i09i09i9wbell', id: 6 }
-  ];
+.controller('SinitrosCtrl', function($scope, $http) {
+  $http.get('https://cors-test.appspot.com/test')
+       .then(
+          function(resp) {
+            $scope.sinistros = [
+              { title: 'Marcão da Zueira', id: 1 },
+              { title: 'Chuoiuoiill', id: 2 },
+              { title: 'uiuoio', id: 3 },
+              { title: 'Inuiouiudie', id: 4 },
+              { title: 'Ruiouoiap', id: 5 },
+              { title: 'Couoiuiowbell', id: 6 }
+            ];
+          }, 
+          function(err) {
+            $scope.sinistros = [
+              { title: 'Errou', id: 1 },
+              { title: 'teste', id: 2 }
+            ];
+          }
+        )  
 })
 
 .controller('SinitroCtrl', function($scope, $stateParams) {
