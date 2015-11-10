@@ -1,5 +1,23 @@
 <ion-view view-title="Cotacoes">
   <ion-content>
-    <h1>Cotacoes</h1>
+    <h1>Cotacao</h1>    
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Nome</span>
+          <input type="text" ng-model="cotacao.nome" disabled="true">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Descrĩção</span>
+          <input type="password" ng-model="cotacao.descricao" disabled="true">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Apólice</span>
+          <input type="password" ng-model="cotacao.valorApolice" disabled="true">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Franquia</span>
+          <input type="password" ng-model="cotacao.valorFranquia" disabled="true">
+        </label>
+      </div>
   </ion-content>
 </ion-view>

@@ -89,32 +89,19 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'teste', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-})
-
 .controller('CotacoesCtrl', function($scope, $http) {
+
   var req = {
       method: 'GET',
-      url: 'https://cors-test.appspot.com/test'
+      url: 'https://cors-test.appspot.com/cotacoes?_limit=10&_offset10'
       //headers: { 'Content-Type': ""},
-      //data: { test: 'test' }
+      //data: { test: '' }
   }
   $http(req)
        .then(
           function(resp) {
             $scope.cotacoes = [
-              { title: 'Renan da Zueira', id: 1 },
+              { title: 'Nenhum resultado encontrado', id: 0 },
               { title: 'Chuoiuoiill', id: 2 },
               { title: 'uiuoio', id: 3 },
               { title: 'Inuiouiudie', id: 4 },
@@ -124,8 +111,7 @@ angular.module('starter.controllers', [])
           }, 
           function(err) {
             $scope.cotacoes = [
-              { title: 'Errou', id: 1 },
-              { title: 'teste', id: 2 }
+              { title: 'Erro ao recuperar informações das cotações', id: 0 }
             ];
           }
         )  
@@ -135,11 +121,17 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SinitrosCtrl', function($scope, $http) {
-  $http.get('https://cors-test.appspot.com/test')
+  var req = {
+      method: 'GET',
+      url: 'https://cors-test.appspot.com/sinistros?_limit=10&_offset10'
+      //headers: { 'Content-Type': ""},
+      //data: { test: '' }
+  }
+  $http(req)
        .then(
           function(resp) {
             $scope.sinistros = [
-              { title: 'Marcão da Zueira', id: 1 },
+              { title: 'Nenhum resultado encontrado', id: 0 },
               { title: 'Chuoiuoiill', id: 2 },
               { title: 'uiuoio', id: 3 },
               { title: 'Inuiouiudie', id: 4 },
@@ -149,8 +141,7 @@ angular.module('starter.controllers', [])
           }, 
           function(err) {
             $scope.sinistros = [
-              { title: 'Errou', id: 1 },
-              { title: 'teste', id: 2 }
+              { title: 'Erro ao recuperar informações dos sinistros', id: 0 }
             ];
           }
         )  

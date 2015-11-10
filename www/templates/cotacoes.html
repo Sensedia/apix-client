@@ -3,8 +3,15 @@
   	<button class="button button-icon button-clear ion-plus" ng-click="newCotacao()">
     </button>
     <ion-list>
-      <ion-item ng-repeat="cotacao in cotacoes" href="#/app/cotacoes/{{cotacao.id}}">
-        {{cotacao.title}}
+      <ion-item ng-repeat="cotacao in cotacoes" >
+        <button class="button-icon button-clear ion-edit" ng-click="newCotacao()">
+        </button>
+        <button class="button-icon button-clear ion-trash-a" ng-click="newCotacao()">
+        </button>
+        <a href="#/app/cotacoes/{{cotacao.id}}">
+          {{cotacao.title}}
+          {{cotacao.nome}}
+        </a>
       </ion-item>
     </ion-list>
   </ion-content>
