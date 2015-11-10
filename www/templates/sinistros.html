@@ -1,16 +1,14 @@
 <ion-view view-title="Sinistros">
   <ion-content>
   	<button class="button button-icon button-clear ion-plus" ng-click="newSinistro()">
+      Nova cotação
     </button>  
     <ion-list>
       <ion-item ng-repeat="sinistro in sinistros">
-        <button class="button-icon button-clear ion-edit" ng-click="newSinistro()">
+        <button class="button-icon button-clear ion-trash-a" ng-click="deleteSinistro(sinistros.id)">
         </button>
-        <button class="button-icon button-clear ion-trash-a" ng-click="newSinistro()">
-        </button>
-        <a href="#/app/sinistros/{{sinistros.id}}">
-          {{sinistro.title}}
-          {{sinistro.localizacao}}
+        <a href="#/app/sinistros/{{sinistro.id}}" style="text-decoration: none; color: #000000;">
+          Número: {{sinistro.id}}
         </a>
       </ion-item>
     </ion-list>

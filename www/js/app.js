@@ -84,7 +84,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
       views: {
         'menuContent': {
           templateUrl: 'templates/sinistro.html',
-          controller: 'SinitrosCtrl'
+          controller: 'SinitroCtrl'
         }
       }
     });

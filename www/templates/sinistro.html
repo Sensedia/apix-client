@@ -1,15 +1,24 @@
 <ion-view view-title="Sinistro">
-  <ion-content>
-    <h1>Sinistro</h1>
-    	<div class="list">
-	        <label class="item item-input">
-	          <span class="input-label">Tipo</span>
-	          <input type="password" ng-model="cotacao.tipo" disabled="true">
-	        </label>
-	        <label class="item item-input">
-	          <span class="input-label">Localização</span>
-	          <input type="password" ng-model="cotacao.localizacao" disabled="true">
-	        </label>
-	    </div>
-  </ion-content>
+  	<form ng-submit="updateSinistro()">
+	  <ion-content>
+	    <h1>Sinistro</h1>
+	    	<div class="list">
+	    		<label class="item item-input">
+		          <span class="input-label">Número</span>
+		          <input type="text" ng-model="sinistro.id" disabled="true">
+		        </label>
+		        <label class="item item-input">
+		          <span class="input-label">Tipo</span>
+		          <input type="text" ng-model="sinistro.tipo">
+		        </label>
+		        <label class="item item-input">
+		          <span class="input-label">Localização</span>
+		          <input type="text" ng-model="sinistro.localizacao">
+		        </label>
+		        <label class="item">
+		          <button class="button button-block button-positive" type="submit">Atualizar</button>
+		        </label>
+		    </div>
+	  </ion-content>
+	</form>
 </ion-view>

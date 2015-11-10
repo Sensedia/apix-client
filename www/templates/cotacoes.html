@@ -1,16 +1,14 @@
 <ion-view view-title="Cotacoes">
   <ion-content>
   	<button class="button button-icon button-clear ion-plus" ng-click="newCotacao()">
+      Nova cotação
     </button>
     <ion-list>
       <ion-item ng-repeat="cotacao in cotacoes" >
-        <button class="button-icon button-clear ion-edit" ng-click="newCotacao()">
+        <button class="button-icon button-clear ion-trash-a" ng-click="deleteCotacao(cotacao.id)">
         </button>
-        <button class="button-icon button-clear ion-trash-a" ng-click="newCotacao()">
-        </button>
-        <a href="#/app/cotacoes/{{cotacao.id}}">
-          {{cotacao.title}}
-          {{cotacao.nome}}
+        <a href="#/app/cotacoes/{{cotacao.id}}" style="text-decoration: none; color: #000000;">
+          Número: {{cotacao.id}} - kind: {{cotacao.kind}}
         </a>
       </ion-item>
     </ion-list>
