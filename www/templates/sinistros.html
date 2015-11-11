@@ -1,7 +1,7 @@
-<ion-view view-title="Sinistros">
+<ion-view view-title="Sinistros" ng-init="getSinistros()">
   <ion-content>
   	<button class="button button-icon button-clear ion-plus" ng-click="newSinistro()">
-      Nova cotação
+      Novo sinistro
     </button>  
     <ion-list>
       <ion-item ng-repeat="sinistro in sinistros">
