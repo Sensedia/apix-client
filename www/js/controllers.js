@@ -1,6 +1,6 @@
-var URL = 'https://1-dot-apix-carinsurance-cherri-02.appspot.com/_ah/api/carinsuranceendpoint';
-var URL_COTACOES = URL+'/v1/cotacoes';
-var URL_SINISTROS = URL+'/v1/sinistros';
+var URL = 'https://1-dot-apix-carinsurance-cherri-02.appspot.com/_ah/api/carinsuranceendpoint/v1';
+var URL_COTACOES = URL+'/cotacoes';
+var URL_SINISTROS = URL+'/sinistros';
 
 angular.module('starter.controllers', [])
 
