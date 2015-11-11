@@ -1,10 +1,10 @@
-var URL = 'https://1-dot-apix-carinsurance-cherri-02.appspot.com/_ah/api/carinsuranceendpoint';
+var URL = 'https://1-dot-apix-carinsurance-cherri-02.appspot.com/_ah/api/carinsuranceendpoint/v1';
 
 angular.module('starter.controllers', [])
 
         .service('cotacaoService', ['$http', function ($http) {
 
-                var URL_COTACAO = URL + '/v1/cotacoes';
+                var URL_COTACAO = URL + '/cotacoes';
 
                 function findAll() {
                     return $http({method: "GET", url: URL_COTACAO + "/?_limit=10&_offset=0"});
@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
 
         .service('sinistroService', ['$http', function ($http) {
 
-                var URL_SINISTRO = URL + '/v1/sinistros';
+                var URL_SINISTRO = URL + '/sinistros';
 
                 function findAll() {
                     return $http({method: "GET", url: URL_SINISTRO + "/?_limit=10&_offset=0"});
