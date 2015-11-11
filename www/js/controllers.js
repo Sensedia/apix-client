@@ -49,46 +49,7 @@ angular.module('starter.controllers', [])
 
         .service('sinistroService', ['$http', function ($http) {
 
-                var URL_SINISTRO = URL + '/sinistros';
-
-                function findAll() {
-                    return $http({method: "GET", url: URL_SINISTRO + "/?_limit=10&_offset=0"});
-                }
-
-                function findById(id) {
-                    return $http({method: "GET", url: URL_SINISTRO + "/" + id});
-                }
-
-                function create(obj) {
-                    return $http({method: "POST", url: URL_SINISTRO, data: obj});
-                }
-
-                function update(obj) {
-                    return $http({method: "PUT", url: URL_SINISTRO + "/" + obj.id, data: obj});
-                }
-
-                function remove(id) {
-                    return $http({method: "DELETE", url: URL_SINISTRO + "/" + id});
-                }
-
-                this.getSinistro = function (id) {
-                    return findById(id);
-                };
-
-                this.getSinistros = function () {
-                    return findAll();
-                };
-
-                this.deleteSinistro = function (id) {
-                    return remove(id);
-                };
-
-                this.saveSinistro = function (obj) {
-                    if (obj.id)
-                        return update(obj);
-                    else
-                        return create(obj);
-                };
+               //TODO
 
             }])
 
@@ -206,70 +167,5 @@ angular.module('starter.controllers', [])
 
         .controller('SinistroCtrl', function ($scope, $ionicModal, sinistroService, $stateParams) {
 
-            $ionicModal.fromTemplateUrl('templates/newsinistro.html', {scope: $scope}).then(
-                    function (modal) {
-                        $scope.loginNewSinistro = modal;
-                    });
-
-            $scope.newSinistro = function () {
-                $scope.sinistro = {};
-                $scope.loginNewSinistro.show();
-            };
-
-            $scope.closeNewSinistro = function () {
-                $scope.loginNewSinistro.hide();
-            };
-
-            $scope.getSinistros = function () {
-                sinistroService.getSinistros().then(
-                        function (resp) {
-                            if (resp.data.items.length)
-                                $scope.sinistros = resp.data.items;
-                            else
-                                $scope.sinistros.push({title: 'Nenhum resultado encontrado', id: 0});
-                        },
-                        function (err) {
-                            $scope.sinistros = [
-                                {title: 'Erro ao recuperar informações dos sinistros', id: 0}
-                            ];
-                        }
-                );
-            };
-
-            $scope.getSinistro = function () {
-                sinistroService.getSinistro($stateParams.sinistroId).then(
-                        function (resp) {
-                            $scope.sinistro = resp.data;
-                        },
-                        function (err) {
-                            console.log('erro');
-                        }
-                );
-            };
-
-            $scope.saveSinistro = function () {
-                sinistroService.saveSinistro($scope.sinistro).then(
-                        function (resp) {
-                            $scope.sinistro = resp.data;
-                        },
-                        function (err) {
-                            console.log('erro');
-                        }
-                );
-
-//                $timeout(function () {
-                    $scope.closeNewSinistro();
-//                }, 1000);
-            };
-
-            $scope.deleteSinistro = function (id) {
-                sinistroService.deleteSinistro(id).then(
-                        function (resp) {
-                            $scope.getSinistros();
-                        },
-                        function (err) {
-                            console.log('erro');
-                        }
-                );
-            };
+            //TODO new sinistro
         });

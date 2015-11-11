@@ -32,23 +32,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
                         controller: 'AppCtrl'
                     })
 
-                    .state('app.search', {
-                        url: '/search',
-                        views: {
-                            'menuContent': {
-                                templateUrl: 'templates/search.html'
-                            }
-                        }
-                    })
-
-                    .state('app.browse', {
-                        url: '/browse',
-                        views: {
-                            'menuContent': {
-                                templateUrl: 'templates/browse.html'
-                            }
-                        }
-                    })
                     .state('app.cotacoes', {
                         url: '/cotacoes',
                         views: {
@@ -65,26 +48,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngResource'])
                             'menuContent': {
                                 templateUrl: 'templates/cotacao.html',
                                 controller: 'CotacaoCtrl'
-                            }
-                        }
-                    })
-
-                    .state('app.sinistros', {
-                        url: '/sinistros',
-                        views: {
-                            'menuContent': {
-                                templateUrl: 'templates/sinistros.html',
-                                controller: 'SinistroCtrl'
-                            }
-                        }
-                    })
-
-                    .state('app.sinistro', {
-                        url: '/sinistros/:sinistroId',
-                        views: {
-                            'menuContent': {
-                                templateUrl: 'templates/sinistro.html',
-                                controller: 'SinistroCtrl'
                             }
                         }
                     });

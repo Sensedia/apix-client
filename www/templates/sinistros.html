@@ -1,16 +1,3 @@
 <ion-view view-title="Sinistros" ng-init="getSinistros()">
-  <ion-content>
-  	<button class="button button-icon button-clear ion-plus" ng-click="newSinistro()">
-      Novo sinistro
-    </button>  
-    <ion-list>
-      <ion-item ng-repeat="sinistro in sinistros">
-        <button class="button-icon button-clear ion-trash-a" ng-click="deleteSinistro(sinistros.id)">
-        </button>
-        <a href="#/app/sinistros/{{sinistro.id}}" style="text-decoration: none; color: #000000;">
-          Número: {{sinistro.id}}
-        </a>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+
 </ion-view>
